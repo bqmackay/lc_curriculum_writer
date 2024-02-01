@@ -1,7 +1,9 @@
 from fastapi import FastAPI
+import main
 
 app = FastAPI()
 
 @app.get('/')
 async def root():
-    return {"message": "Hello World"}
+    result = main.some_func()
+    return {"message": result}
